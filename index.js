@@ -25,5 +25,4 @@ let GPT4 = async (message) => {
 
   return response.data.choices[0].message.content;
 };
-console.log(process.env.OPENAI_API_KEY);
 console.log("### I'm GPT-4. ####", await GPT4(GPT4Message));
