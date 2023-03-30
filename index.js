@@ -1,5 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
-
+import * as dotenv from 'dotenv'
+dotenv.config();
 const openai = new OpenAIApi(
   new Configuration({ apiKey: process.env.OPENAI_API_KEY })
 );
@@ -24,5 +25,5 @@ let GPT4 = async (message) => {
 
   return response.data.choices[0].message.content;
 };
-
+console.log(process.env.OPENAI_API_KEY);
 console.log("### I'm GPT-4. ####", await GPT4(GPT4Message));
